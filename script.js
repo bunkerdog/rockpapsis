@@ -30,7 +30,7 @@ function win(userChoice, computerChoice) {
     
     result_p.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You win!";
     document.getElementById(userChoice).classList.add('green-glow');
-    setTimeout(function( ){ document.getElementById(userChoice).classList.remove('green-glow')}, 1500)
+    setTimeout(function( ){ document.getElementById(userChoice).classList.remove('green-glow')}, 2500);
 }
 
 function lose(userChoice, computerChoice) {
@@ -38,11 +38,14 @@ function lose(userChoice, computerChoice) {
     ComputerScore_span.innerHTML = ComputerScore;
     userScore_span.innerHTML = userScore;
     result_p.innerHTML =  convertToWord(computerChoice) + " beats " + convertToWord(userChoice) + ". You lose!";
+    document.getElementById(computerChoice).classList.add('red-glow');
+    setTimeout(function(){ document.getElementById(computerChoice).classList.remove('red-glow')}, 2000);
 }
 function draw(userChoice, computerChoice) {
     computerChoice==userChoice;
     result_p.innerHTML = convertToWord(userChoice) + " and " + convertToWord(computerChoice) + " are the same. It's a draw!";
-    
+    document.getElementById(computerChoice, userChoice).classList.add('grey-glow');
+    setTimeout(function(){document.getElementById(computerChoice, userChoice).classList.remove('grey-glow')}, 2000)
 }
 
 
