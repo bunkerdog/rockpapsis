@@ -15,13 +15,31 @@ function getComputerChoice(){
     return choices[randomNumber];
 }
 
-console.log(getComputerChoice());
+
 
 function game(userChoice){
-    
+    const computerChoice = getComputerChoice();
+    switch (userChoice + computerChoice) {
+        case "rp":
+        case "pr":
+        case "sp":
+            console.log("USER WINS")
+            break
+        case "rp":
+        case "ps":
+        case "sr":
+            console.log("USER LOSES");
+            break;
+        case "rr":
+        case "pp":
+        case "ss":
+            console.log("IT'S A TIE");
+            break;
+          
+
+    }    
 }
 
-main();
 
 function main(){
 
