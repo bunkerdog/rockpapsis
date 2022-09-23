@@ -26,9 +26,13 @@ function convertToWord(letter) {
 function win(userChoice, computerChoice) {
     userScore++;
     userScore_span.innerHTML = userScore;
-    ComputerScore_span.innerHTML = ComputerScore
+    ComputerScore_span.innerHTML = ComputerScore;
+    
     result_p.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You win!";
+    document.getElementById(userChoice).classList.add('green-glow');
+    setTimeout(function( ){ document.getElementById(userChoice).classList.remove('green-glow')}, 1500)
 }
+
 function lose(userChoice, computerChoice) {
     ComputerScore++;
     ComputerScore_span.innerHTML = ComputerScore;
@@ -37,7 +41,7 @@ function lose(userChoice, computerChoice) {
 }
 function draw(userChoice, computerChoice) {
     computerChoice==userChoice;
-    result_p.innerHTML = convertToWord(userChoice) + convertToWord(computerChoice) + " are the same. It's a draw!";
+    result_p.innerHTML = convertToWord(userChoice) + " and " + convertToWord(computerChoice) + " are the same. It's a draw!";
     
 }
 
