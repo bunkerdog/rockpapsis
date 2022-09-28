@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    background: white;
+    background: rgb(255, 125, 39);
     padding: 20px;
 }
 
@@ -51,11 +51,11 @@ header > h1 {
 #comp-label{
     position: absolute;
     top: 30px;
-    right: -25px;
+    right: -45px;
 }
 
 .result{
-    font-size: 40px;
+    font-size: 50px;
     color: white;
 }
 

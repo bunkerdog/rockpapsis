@@ -16,9 +16,9 @@ function getComputerChoice(){
 }
 
 function convertToWord(letter) {
-    if (letter === "r") return "Rock";
-    if (letter === "p") return "Paper";
-    return "Scissors";
+    if (letter === "r") return "Stick-side";
+    if (letter === "p") return "Body";
+    return "Glove-side";
 }
 
 
@@ -28,7 +28,7 @@ function win(userChoice, computerChoice) {
     userScore_span.innerHTML = userScore;
     ComputerScore_span.innerHTML = ComputerScore;
     
-    result_p.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You win!";
+    result_p.innerHTML = convertToWord(userChoice) + " meets " + convertToWord(computerChoice) + ". You made the save!";
     document.getElementById(userChoice).classList.add('green-glow');
     setTimeout(function( ){ document.getElementById(userChoice).classList.remove('green-glow')}, 2500);
 }
@@ -37,13 +37,13 @@ function lose(userChoice, computerChoice) {
     ComputerScore++;
     ComputerScore_span.innerHTML = ComputerScore;
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML =  convertToWord(computerChoice) + " beats " + convertToWord(userChoice) + ". You lose!";
+    result_p.innerHTML =  convertToWord(computerChoice) + " got by " + convertToWord(userChoice) + ". You lose!";
     document.getElementById(computerChoice).classList.add('red-glow');
     setTimeout(function(){ document.getElementById(computerChoice).classList.remove('red-glow')}, 2000);
 }
 function draw(userChoice, computerChoice) {
     computerChoice==userChoice;
-    result_p.innerHTML = convertToWord(userChoice) + " and " + convertToWord(computerChoice) + " are the same. It's a draw!";
+    result_p.innerHTML = convertToWord(userChoice) + " and " + convertToWord(computerChoice) + " are the same. It's a save!";
     document.getElementById(computerChoice, userChoice).classList.add('grey-glow');
     setTimeout(function(){document.getElementById(computerChoice, userChoice).classList.remove('grey-glow')}, 2000)
 }
@@ -52,9 +52,9 @@ function draw(userChoice, computerChoice) {
 function game(userChoice){
     const computerChoice = getComputerChoice();
     switch (userChoice + computerChoice) {
-        case "rs":
-        case "pr":
-        case "sp":
+        case "rr":
+        case "pp":
+        case "ss":
             win(userChoice, computerChoice);
             break
         case "rp":
