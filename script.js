@@ -37,7 +37,7 @@ function lose(userChoice, computerChoice) {
     ComputerScore++;
     ComputerScore_span.innerHTML = ComputerScore;
     userScore_span.innerHTML = userScore;
-    result_p.innerHTML =  convertToWord(computerChoice) + " got by " + convertToWord(userChoice) + ". You lose!";
+    result_p.innerHTML =  convertToWord(computerChoice) + " got by " + convertToWord(userChoice) + ". Shooter scored.";
     document.getElementById(computerChoice).classList.add('red-glow');
     setTimeout(function(){ document.getElementById(computerChoice).classList.remove('red-glow')}, 2000);
 }
